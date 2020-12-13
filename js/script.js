@@ -73,8 +73,8 @@ $(window).on("scroll", function () {
 /* Задание 1
 При нажатии на ссылку “Read More” у текста с классом “text-hidden” должен удалиться класс “hidden”, чтобы отобразился текст. А у ссылки должен поменяться текст на “Hidden”. При повторном нажатии на эту же ссылку текст должен опять скрыться и у ссылки должен вернуться текст по умолчанию. */
 
-$(".read-more").click(function (evenObj) {
-    evenObj.preventDefault();
+$(".read-more").click(function () {
+    
     if ($(this).html() == "Read More") {
         $("span").removeClass("hidden")
         $(this).html("Hidden")
