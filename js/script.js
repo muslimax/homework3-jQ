@@ -81,3 +81,28 @@ $(".read-more").click(function () {
          $(this).html("Hidden")
     }
 })
+/* Задание 2
+Вашим домашним заданием будет сделать появление кнопки вверх с классом “js-btn-top”, если проскролили на 100px и чтобы при нажатии на нее пользователя плавно поднимало наверх. */
+
+$(window).on("scroll", function () {
+    if ($(window).scrollTop() > 100) {
+        $(".js-btn-top").addClass("show")
+    } else {
+        $(".js-btn-top").removeClass("show")
+    }
+})
+$(".js-btn-top").click(function () {
+    $("html").animate({
+        scrollTop: 0
+    }, 1000)
+})
+
+$('.js-sroll-to-id').click(function (e) { 
+    e.preventDefault();
+    const attr = $(this).attr("href");
+    let elPosition =$(attr).offset().top
+    $("html").animate({
+        scrollTop: elPosition - $(".nav").outerHeight()
+    }, 1000)
+   
+ })
